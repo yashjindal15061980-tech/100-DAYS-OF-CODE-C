@@ -3,13 +3,9 @@
 int main(void) {
     int frequency[256] = {0};
     int ch;
-
-    /* Count characters in the first string. */
     while ((ch = getchar()) != EOF && ch != '\n') {
         frequency[(unsigned char)ch]++;
     }
-
-    /* Subtract characters in the second string. */
     while ((ch = getchar()) != EOF && ch != '\n') {
         frequency[(unsigned char)ch]--;
     }
