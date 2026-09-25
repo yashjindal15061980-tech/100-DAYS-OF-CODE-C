@@ -1,4 +1,4 @@
-#include <stdio.h
+#include <stdio.h>
 
 int main(void) {
     int n, position;
@@ -9,7 +9,7 @@ int main(void) {
         scanf("%d", &arr[i]);
     }
 
-    scanf("%d", &position);  // 1-based position
+    scanf("%d", &position);  
 
     for (int i = position - 1; i < n - 1; i++) {
         arr[i] = arr[i + 1];
