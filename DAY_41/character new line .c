@@ -4,8 +4,6 @@ int main(void) {
     char str[1000];
     int ch;
     int i = 0;
-
-    /* Read one line, including spaces. */
     while ((ch = getchar()) != EOF && ch != '\n' && i < 999) {
         str[i++] = (char)ch;
     }
