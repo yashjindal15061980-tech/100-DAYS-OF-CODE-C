@@ -1,37 +1,30 @@
 #include <stdio.h>
 
-int main(void) {
-    int rows, cols;
-    scanf("%d %d", &rows, &cols);
+int main()
+{
+    int a[100][100];
+    int r, c, i, j, d;
 
-    int matrix[rows][cols];
+    scanf("%d %d", &r, &c);
 
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            scanf("%d", &matrix[i][j]);
+    for(i = 0; i < r; i++)
+    {
+        for(j = 0; j < c; j++)
+        {
+            scanf("%d", &a[i][j]);
         }
     }
 
-    int first = 1;
+    for(d = 0; d < r + c - 1; d++)
+    {
+        for(i = 0; i < r; i++)
+        {
+            j = d - i;
 
-    /* Traverse diagonals from top-left to bottom-right.
-       Each diagonal is printed from bottom to top. */
-    for (int diagonal = 0; diagonal < rows + cols - 1; diagonal++) {
-        int startRow = diagonal < rows ? diagonal : rows - 1;
-        int startCol = diagonal < rows ? 0 : diagonal - rows + 1;
-
-        while (startRow >= 0 && startCol < cols) {
-            if (!first) {
-                printf(" ");
-            }
-            printf("%d", matrix[startRow][startCol]);
-            first = 0;
-
-            startRow--;
-            startCol++;
+            if(j >= 0 && j < c)
+                printf("%d ", a[i][j]);
         }
     }
 
-    printf("\n");
     return 0;
 }
