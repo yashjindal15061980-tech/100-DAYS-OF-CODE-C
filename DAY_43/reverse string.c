@@ -1,18 +1,21 @@
 #include <stdio.h>
 
-int main(void) {
-    char str[1000];
-    int ch;
-    int length = 0;
+int main()
+{
+    char str[100];
+    int i, length = 0;
 
-    while ((ch = getchar()) != EOF && ch != '\n' && length < 999) {
-        str[length++] = (char)ch;
+    scanf("%s", str);
+
+    while(str[length] != '\0')
+    {
+        length++;
     }
 
-    for (int i = length - 1; i >= 0; i--) {
-        putchar(str[i]);
+    for(i = length - 1; i >= 0; i--)
+    {
+        printf("%c", str[i]);
     }
-    putchar('\n');
 
     return 0;
 }
