@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main(void) {
+    int rows, cols;
+    scanf("%d %d", &rows, &cols);
+
+    int a[rows][cols];
+    int b[rows][cols];
+
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            scanf("%d", &b[i][j]);
+        }
+    }
+
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            if (j > 0) {
+                printf(" ");
+            }
+            printf("%d", a[i][j] + b[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
