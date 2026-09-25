@@ -1,30 +1,38 @@
 #include <stdio.h>
 
-int main(void) {
-    int n, position, value;
+int main()
+{
+    int n, i, element, pos;
 
     scanf("%d", &n);
 
-    int arr[n + 1];
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
+    int a[n + 1];
+
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
     }
 
-    scanf("%d %d", &position, &value);
+    scanf("%d", &element);
 
-    /* Position is 1-based. Shift elements right to make space. */
-    for (int i = n; i >= position; i--) {
-        arr[i] = arr[i - 1];
-    }
-    arr[position - 1] = value;
+    pos = 0;
 
-    for (int i = 0; i <= n; i++) {
-        if (i > 0) {
-            printf(" ");
-        }
-        printf("%d", arr[i]);
+    while(pos < n && a[pos] < element)
+    {
+        pos++;
     }
-    printf("\n");
+
+    for(i = n; i > pos; i--)
+    {
+        a[i] = a[i - 1];
+    }
+
+    a[pos] = element;
+
+    for(i = 0; i <= n; i++)
+    {
+        printf("%d ", a[i]);
+    }
 
     return 0;
 }
